@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: lightcyan;
+    }
+    form {
+      max-width: 400px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input, select {
+      width: 100%;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      padding: 8px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+  <form >
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" >
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" >
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" 
+           title="Phone number should be 10 digits">
+
+    <label for="country">Country:</label>
+    <select id="country" name="country" >
+      <option value="">Select Country</option>
+      <option value="IN">India</option>
+      <option value="US">United States</option>
+      <option value="UK">United Kingdom</option>
+    </select>
+
+    <input type="submit" value="Register">
+     <!-- <a href='{% url "login"  %}'><button>Go to Login</button></a> -->
+      <a href='{% url "login"  %}'> Go to Login</a>
+  </form>
+
+</body>
+</html>
