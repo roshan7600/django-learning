@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ chai.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f7f7f7;
+            padding: 20px;
+        }
+
+        .detail-box {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.2);
+        }
+
+        img {
+            width: 320px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #0077ff;
+            margin-top: 10px;
+        }
+
+        .price {
+            font-size: 20px;
+            color: #009933;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .back-btn {
+            margin-top: 15px;
+            background: #ff5500;
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: #cc4400;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="detail-box">
+        <img src="{{ chai.image.url }}" alt="">
+        <h2>{{ chai.name }}</h2>
+        <p class="price">Price: ₹{{ chai.price }}</p>
+        <p>{{ chai.description }}</p>
+
+        <a href="{% url 'all_chai' %}">
+            <button class="back-btn">Back</button>
+        </a>
+    </div>
+
+</body>
+</html>

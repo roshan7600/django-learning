@@ -1,0 +1,97 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai</title>
+</head>
+<body style="text-align: center;">
+    <h1 style="color: blue;">All Chai</h1>
+
+    {% for chai in chais %}
+        <div class="chai-item" style="margin-bottom: 20px;">
+            <img src="{{ chai.image.url }}" alt="" width="200">
+            <h3>{{ chai.name }}</h3>
+        </div>
+    {% endfor %}
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Chai</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f7f7f7;
+        }
+
+        h1 {
+            color: #0077ff;
+            margin-top: 20px;
+        }
+
+        .chai-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .chai-item {
+            background: white;
+            border-radius: 10px;
+            width: 230px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .chai-item:hover {
+            transform: scale(1.05);
+        }
+
+        .chai-item img {
+            width: 200px;
+            border-radius: 10px;
+        }
+
+        .view-btn {
+            margin-top: 10px;
+            background: #0077ff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .view-btn:hover {
+            background: #0059bf;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Chai</h1>
+
+    <div class="chai-container">
+        {% for chai in chais %}
+            <div class="chai-item">
+                <img src="{{ chai.image.url }}" alt="">
+                <h3>{{ chai.name }}</h3>
+
+                <a href="{% url 'chai_details' chai.id %}">
+                    <button class="view-btn">View Details</button>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
