@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Data</title>
+
+    <style>
+        table {
+            width: 60%;
+            margin: auto;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background: lightgray;
+        }
+
+        .button-div {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 8px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOPICS TABLE -->
+    <h2 style="text-align:center;">Inserted Topics</h2>
+
+    <table>
+        <tr>
+            <th>Topic Name</th>
+        </tr>
+ 
+        {% for t in topics %}
+        <tr>
+            <td>{{ t.Topic_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    <!-- WEBPAGE TABLE -->
+    <h2 style="text-align:center;">Inserted Webpages</h2>
+
+    <table>
+        <tr>
+            <th>Topic</th>
+            <th>Name</th>
+            <th>Url</th>
+        </tr>
+
+        {% for w in webpages %}
+        <tr>
+            <td>{{ w.Topic_name.Topic_name }}</td>
+            <td>{{ w.name }}</td>
+            <td>{{ w.Url }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    <!-- ACCESS RECORD TABLE -->
+    <h2 style="text-align:center;">Inserted Access Records</h2>
+
+    <table>
+        <tr>
+            <th>Webpage Name</th>
+            <th>Author</th>
+            <th>Date</th>
+        </tr>
+
+        {% for a in accessrecord %}
+        <tr>
+            <td>{{ a.name.name }}</td>
+            <td>{{ a.Author }}</td>
+            <td>{{ a.Date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    <!-- BUTTONS -->
+    <div class="button-div">
+        <a href="/insert_topic/">
+            <button>Add Topic</button>
+        </a>
+
+        <a href="/insert_webpage/">
+            <button>Add Webpage</button>
+        </a>
+
+        <a href="/insert_accessrecord/">
+            <button>Add AccessRecord</button>
+        </a>
+    </div>
+
+</body>
+</html>
