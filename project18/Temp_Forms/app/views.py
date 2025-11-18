@@ -146,7 +146,9 @@ def checkbox(request):
 
 
 
-
+# TAKING INPUT FROM URL AND DISPLAYING IT
+def wish(request, name):
+    return HttpResponse(f'Hello {name} , Welcome to Django Forms')
 
 
 

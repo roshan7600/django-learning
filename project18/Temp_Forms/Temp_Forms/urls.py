@@ -28,6 +28,6 @@ urlpatterns = [
     path('select_multiple_topics/',select_multiple_topics,name='select_multiple_topics'),
     path('checkbox/',checkbox,name='checkbox'),
    
-    
+    path('wish/<str:name>/', wish, name='wish'),
 
 ]
