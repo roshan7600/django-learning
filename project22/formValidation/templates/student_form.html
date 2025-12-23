@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        {{ ESDO.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
